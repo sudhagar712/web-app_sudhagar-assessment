@@ -4,6 +4,7 @@ import store1 from "../../assets/images/store1.png";
 import store2 from "../../assets/images/store2.png"; 
 
 const SelectStore = () => {
+    
   const [selectedStore, setSelectedStore] = useState(null);
 
   const stores = [

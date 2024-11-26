@@ -1,52 +1,72 @@
 import React from "react";
-import sidelogo from "../assets/images/dasboardlogo.png"
-import { RiDashboardLine } from "react-icons/ri";
-import { PiVan } from "react-icons/pi";
-import { BiCartAdd } from "react-icons/bi";
-import { FaRegUser } from "react-icons/fa";
+import Shop from "../assets/images/dasboardlogo.png";
+import logo from "../assets/images/logo1.png";
+import { IoIosArrowDown } from "react-icons/io";
+import { MdOutlineDashboard } from "react-icons/md";
+import { FiTruck } from "react-icons/fi";
+import { MdAddShoppingCart } from "react-icons/md";
+import { MdOutlinePerson } from "react-icons/md";
+import { IoCloseOutline } from "react-icons/io5";
 
+const Sidebar = ({ isOpen, closeSidebar }) => {
 
-
-const Sidebar = () => {
   return (
-    <div className="w-64 h-screen bg-white shadow-md">
-      {/* Logo Section */}
-      <div className="flex flex-col items-center py-4 border-b">
-        <h1 className="text-3xl font-bold text-green-600 mb-8 ">
-          <em>REWARDIFY</em>
-        </h1>
-
-        <div className="mt-4">
+    <div
+      className={`${
+        isOpen ? "block" : "hidden"
+      } md:block absolute md:static bg-gray-50 h-screen w-[280px] md:w-1/4 lg:w-1/5 px-6 py-[10%] font-inter shadow-2xl`}
+    >
+      <button
+        onClick={closeSidebar}
+        className="md:hidden absolute top-4 right-4 text-xl"
+      >
+        <IoCloseOutline size={30} />
+      </button>
+      <section>
+        {/* Shop Info */}
+        <div className="flex flex-col space-y-3 items-center ">
           <img
-            src={sidelogo}
-            alt="Store"
-            className="rounded-lg w-20 h-20 object-cover"
+            src={logo}
+            alt="Shop Logo"
+            className="w-32 mt-10 md:hidden md:w-32 rounded-lg border-2 border-gray-300"
           />
-        </div>
-        <h2 className="mt-2 font-medium">Kannan departmental</h2>
-        <p className="text-gray-500 text-sm">Shop ID: 123456789</p>
-      </div>
 
-      {/* Navigation Section */}
-      <div className="mt-4">
-        <ul className="space-y-5">
-          <li className="px-6 py-2 text-sm text-gray-700 hover:bg-green-100 hover:text-green-600 cursor-pointer flex items-center">
-            <span className="material-icons mr-3">
-              <RiDashboardLine className="text-black text-4xl" />
-            </span>
-            <span className="text-black font-[600] leading-[19.36px] text-[16px]">Dashboard</span>
-          </li>
-          <li className="px-6 py-2 text-sm text-gray-700 hover:bg-green-100 hover:text-green-600 cursor-pointer flex items-center">
-            <span className="material-icons mr-3"><PiVan  className="text-black text-4xl"/></span>   <span className="text-black font-[600] leading-[19.36px] text-[16px]">Order</span>
-          </li>
-          <li className="px-6 py-2 text-sm text-gray-700 hover:bg-green-100 hover:text-green-600 cursor-pointer flex items-center">
-            <span className="material-icons mr-3"><BiCartAdd  className="text-black text-4xl"/></span>   <span className="text-black font-[600] leading-[19.36px] text-[16px]">My Products</span>
-          </li>
-          <li className="px-6 py-2 text-sm text-gray-700 hover:bg-green-100 hover:text-green-600 cursor-pointer flex items-center">
-            <span className="material-icons mr-3"><FaRegUser className="text-black text-4xl" /></span>   <span className="text-black font-[600] leading-[19.36px] text-[16px]">Profile</span>
-          </li>
-        </ul>
-      </div>
+          <img
+            src={Shop}
+            alt="Shop Logo"
+            className="w-32 md:w-40  rounded-lg border-3 border-gray-400"
+          />
+          <p className="text-md font-bold mt-4 flex items-center space-x-2 capitalize">
+            <span>Sudhagar Departmental</span>
+            <IoIosArrowDown className="text-gray-500" />
+          </p>
+          <small className="text-sm text-gray-400 mt-1">
+            Shop ID: 1234567890
+          </small>
+        </div>
+
+        {/* Navigation Menu */}
+        <div className="mt-10">
+          <ul className="space-y-6">
+            <li className="sidebar_item flex items-center text-md font-medium text-gray-800 hover:bg-[#F2F8DF] rounded-lg px-4 py-2">
+              <MdOutlineDashboard size={25} className="text-[#668D12]" />
+              <span className="ml-4">Dashboard</span>
+            </li>
+            <li className="sidebar_item flex items-center text-md font-medium text-gray-800 hover:bg-[#F2F8DF] rounded-lg px-4 py-2">
+              <FiTruck size={25} className="text-[#668D12]" />
+              <span className="ml-4">Orders</span>
+            </li>
+            <li className="sidebar_item flex items-center text-md font-medium text-gray-800 hover:bg-[#F2F8DF] rounded-lg px-4 py-2">
+              <MdAddShoppingCart size={25} className="text-[#668D12]" />
+              <span className="ml-4">My Products</span>
+            </li>
+            <li className="sidebar_item flex items-center text-md font-medium text-gray-800 hover:bg-gray-100 rounded-lg px-4 py-2">
+              <MdOutlinePerson size={25} className="text-[#668D12]" />
+              <span className="ml-4">Profile</span>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
   );
 };

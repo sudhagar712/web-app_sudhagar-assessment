@@ -1,28 +1,23 @@
 import React, { useState } from "react";
 import Sidebar from "../../Components/Sidebar";
+import Navbar from "../../Components/Navbar";
+
+import MainContent from "./MainContent";
 
 const MasterDashboard = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-       const toggleSidebar = () => {
-         setIsSidebarOpen(!isSidebarOpen);
-       };
-
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      {/*............................................. Sidebar ...............................................*/}
-      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-    
-        
-      {/*............................................ Main Content............................................. */}
-      <div
-        className={`flex-1 p-6 transition-all ${
-          isSidebarOpen ? "ml-64" : "ml-16"
-        }`}
-      >
-       
+    <div className="flex">
+      <Sidebar isOpen={isSidebarOpen} closeSidebar={closeSidebar} />
+      <div className="flex-1 flex flex-col">
+        <Navbar toggleSidebar={toggleSidebar} />
+        <main >
+          <MainContent/>
+          </main>
       </div>
     </div>
   );
