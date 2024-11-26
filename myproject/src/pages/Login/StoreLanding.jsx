@@ -34,7 +34,7 @@ const StoreLanding = () => {
 
             {/* Buttons */}
             <div className="space-y-2">
-              <Link to="/storelogin">
+              <Link to="/selectstore">
                 <button className="w-full bg-gradient-to-r from-[#668D12] to-[#ACC43F] text-white py-2 rounded-md hover:from-[#55800F] hover:to-[#98B537]">
                   Register your Store with us
                 </button>
