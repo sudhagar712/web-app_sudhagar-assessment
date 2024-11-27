@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
     <div
       className={`${
         isOpen ? "block" : "hidden"
-      } md:block absolute md:static bg-gray-50 h-screen w-[280px] md:w-1/4 lg:w-1/5 px-6 py-[10%] font-inter shadow-2xl`}
+      } md:block absolute md:static bg-gray-200 h-[1200px] md:h-[1000px]  w-[280px] md:w-1/4 lg:w-1/5 px-6 py-[10%] font-inter shadow-2xl`}
     >
       <button
         onClick={closeSidebar}
@@ -28,15 +28,15 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
           <img
             src={logo}
             alt="Shop Logo"
-            className="w-32 mt-10 md:hidden md:w-32 rounded-lg border-2 border-gray-300"
+            className="w-32 mt-10 md:hidden  rounded-lg border-2 border-gray-300"
           />
 
           <img
             src={Shop}
             alt="Shop Logo"
-            className="w-32 md:w-40  rounded-lg border-3 border-gray-400"
+            className="w-32 md:w-32  rounded-lg border-3 border-gray-400"
           />
-          <p className="text-md font-bold mt-4 flex items-center space-x-2 capitalize">
+          <p className="text-sm md:text-[10px] lg:text-[15px]  font-bold mt-4 flex items-center space-x-2 capitalize">
             <span>Sudhagar Departmental</span>
             <IoIosArrowDown className="text-gray-500" />
           </p>
@@ -48,20 +48,20 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
         {/* Navigation Menu */}
         <div className="mt-10">
           <ul className="space-y-6">
-            <li className="sidebar_item flex items-center text-md font-medium text-gray-800 hover:bg-[#F2F8DF] rounded-lg px-4 py-2">
-              <MdOutlineDashboard size={25} className="text-[#668D12]" />
+            <li className="sidebar_item flex items-center text-md font-medium text-gray-800 bg-[#F2F8DF] rounded-lg px-4 py-2">
+              <MdOutlineDashboard size={32} className="text-[#668D12]" />
               <span className="ml-4">Dashboard</span>
             </li>
             <li className="sidebar_item flex items-center text-md font-medium text-gray-800 hover:bg-[#F2F8DF] rounded-lg px-4 py-2">
-              <FiTruck size={25} className="text-[#668D12]" />
+              <FiTruck size={32} className="text-[#668D12]" />
               <span className="ml-4">Orders</span>
             </li>
             <li className="sidebar_item flex items-center text-md font-medium text-gray-800 hover:bg-[#F2F8DF] rounded-lg px-4 py-2">
-              <MdAddShoppingCart size={25} className="text-[#668D12]" />
+              <MdAddShoppingCart size={32} className="text-[#668D12]" />
               <span className="ml-4">My Products</span>
             </li>
-            <li className="sidebar_item flex items-center text-md font-medium text-gray-800 hover:bg-gray-100 rounded-lg px-4 py-2">
-              <MdOutlinePerson size={25} className="text-[#668D12]" />
+            <li className="sidebar_item flex items-center text-md font-medium text-gray-800 hover:bg-[#F2F8DF] rounded-lg px-4 py-2">
+              <MdOutlinePerson size={32} className="text-[#668D12]" />
               <span className="ml-4">Profile</span>
             </li>
           </ul>
