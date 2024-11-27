@@ -19,11 +19,78 @@ const Transaction = () => {
       amount: "+₹500.00",
       isPositive: true,
     },
+    {
+      id: 2,
+      type: "Send a Payment",
+      phone: "+918956598562",
+      paidOn: "Apr 11, 2024 at 4:30PM",
+      via: "Paid via QR Scan",
+      amount: "+₹400.00",
+      isPositive: true,
+    },
+    {
+      id: 3,
+      type: "Send a Payment",
+      phone: "+918956598562",
+      paidOn: "Apr 11, 2024 at 4:30PM",
+      via: "Paid via QR Scan",
+      amount: "+₹300.00",
+      isPositive: true,
+    },
+    {
+      id: 4,
+      type: "Send a Payment",
+      phone: "+918956598562",
+      paidOn: "Apr 11, 2024 at 4:30PM",
+      via: "Paid via QR Scan",
+      amount: "+₹200.00",
+      isPositive: true,
+    },
   ];
 
   const settlements = [
     {
       id: 1,
+      description: "Weekly Settlements (10 Apr - 17 Apr)",
+      paidOn: "Apr 11, 2024 at 4:30PM",
+      via: "REWARDIFY (weekly Settlement)",
+      amount: "-₹3326.00",
+      isPositive: false,
+      status: "Paid",
+      view: "View",
+    },
+    {
+      id: 2,
+      description: "Weekly Settlements (10 Apr - 17 Apr)",
+      paidOn: "Apr 11, 2024 at 4:30PM",
+      via: "REWARDIFY (weekly Settlement)",
+      amount: "-₹3326.00",
+      isPositive: false,
+      status: "Paid",
+      view: "View",
+    },
+    {
+      id: 3,
+      description: "Weekly Settlements (10 Apr - 17 Apr)",
+      paidOn: "Apr 11, 2024 at 4:30PM",
+      via: "REWARDIFY (weekly Settlement)",
+      amount: "-₹3326.00",
+      isPositive: false,
+      status: "Paid",
+      view: "View",
+    },
+    {
+      id: 4,
+      description: "Weekly Settlements (10 Apr - 17 Apr)",
+      paidOn: "Apr 11, 2024 at 4:30PM",
+      via: "REWARDIFY (weekly Settlement)",
+      amount: "-₹3326.00",
+      isPositive: false,
+      status: "Paid",
+      view: "View",
+    },
+    {
+      id: 5,
       description: "Weekly Settlements (10 Apr - 17 Apr)",
       paidOn: "Apr 11, 2024 at 4:30PM",
       via: "REWARDIFY (weekly Settlement)",
@@ -59,14 +126,14 @@ const Transaction = () => {
               Settlement
             </button>
           </div>
-
+          {/* tab content 1 ---------------map */}
           <div className="tab-content">
             {activeTab === "tab1" && (
               <div className="p-0">
                 {transactions.map((transaction) => (
                   <div
                     key={transaction.id}
-                    className="flex items-center justify-between bg-white shadow-md rounded-lg p-4 max-w-md mx-auto"
+                    className="flex items-center mt-3 justify-between bg-white shadow-md rounded-lg p-4 max-w-md mx-auto"
                   >
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-[#F2F8DF] rounded-full flex items-center justify-center">
@@ -100,15 +167,15 @@ const Transaction = () => {
                 ))}
               </div>
             )}
-
+            {/* tab content 2 ---------------map */}
             {activeTab === "tab2" && (
               <div className="p-0">
                 {settlements.map((settlement) => (
                   <div
                     key={settlement.id}
-                    className="flex items-center justify-between bg-white shadow-md rounded-lg p-4 max-w-md mx-auto"
+                    className="flex mb-4 mt-3  items-center justify-between bg-white shadow-md rounded-lg p-4 max-w-md mx-auto"
                   >
-                    <div className="flex items-center gap-4">
+                    <div className="flex  items-center gap-4">
                       <div className="w-12 h-12 bg-[#F2F8DF] rounded-full flex items-center justify-center">
                         <span className="text-green-600 text-xl">🔗</span>
                       </div>
