@@ -13,7 +13,7 @@ const coins = 3000;
 
 
   return (
-    <header className="shadow-lg font-inter fixed left-0 right-0 z-20 bg-gray-200">
+    <header className="shadow-lg font-inter fixed left-0 right-0 z-20 bg-white">
       <nav className="flex justify-between items-center py-4 px-4 md:px-8">
         {/*............................... menu icons........................................................ */}
         <button className="text-gray-500 md:hidden" onClick={toggleSidebar}>

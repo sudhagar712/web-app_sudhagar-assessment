@@ -22,7 +22,7 @@ const MyOrder = () => {
   ];
 
   return (
-    <div className="p-10 w-full max-w-md mx-auto bg-white shadow-md rounded-md">
+    <div className="p-10 w-[340px] md:w-[380px]  bg-white shadow-md rounded-md">
       <div className="flex justify-between">
         <h1 className="text-xl font-bold">My Orders</h1>
         <IoMdRefresh className="text-xl" />
@@ -44,27 +44,26 @@ const MyOrder = () => {
               Order for:
             </h3>
             <div className="flex items-center mb-2">
-              <p className="text-gray-800 font-medium">{order.customer.name}</p>
+              <p className="text-gray-400 text-[20px] mb-2 font-medium">{order.customer.name}</p>
             </div>
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
+            <div className="flex  items-center space-x-3 text-sm text-gray-600">
               <span className="bg-[#F2F8DF] p-1 rounded-full">📞</span>
               <a
                 href={`tel:${order.customer.phone}`}
-                className="text-blue-500 hover:underline"
+                className="text-black text-[12px] hover:underline"
               >
                 {order.customer.phone}
               </a>
+              <span className="bg-[#F2F8DF]  p-1 rounded-full ">📍</span>
+              <p className="text-[10px] font-bold">{order.customer.address}</p>
             </div>
-            <div className="flex items-center space-x-2 text-sm text-gray-600 mt-1">
-              <span className="bg-[#F2F8DF] p-1 rounded-full">📍</span>
-              <p>{order.customer.address}</p>
-            </div>
+          
           </div>
           <div className="border-t pt-2 mt-2">
             <h4 className="text-sm font-semibold text-gray-700 mb-1">
               Order Items:
             </h4>
-            <ul className="text-sm text-gray-600">
+            <ul className="text-[12px]  mt-3 mb-5 text-gray-600">
               {order.items.map((item, index) => (
                 <li key={index}>
                   {item.quantity} x {item.name} - ₹{item.price.toFixed(2)}
@@ -76,7 +75,7 @@ const MyOrder = () => {
               <p className="text-sm text-gray-800">₹{order.total.toFixed(2)}</p>
             </div>
             <div className="mt-1">
-              <span className="text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded-full">
+              <span className="text-[10px] font-semibold  bg-[#F2F8DF] px-2 py-1 p-5 rounded-full">
                 {order.paymentStatus}
               </span>
             </div>

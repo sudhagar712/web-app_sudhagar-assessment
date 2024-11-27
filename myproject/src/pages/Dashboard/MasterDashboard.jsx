@@ -11,7 +11,7 @@ const MasterDashboard = () => {
   const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
-    <div className="flex bg-gray-200 shadow-lg">
+    <div className="flex bg-white shadow-lg">
       <Sidebar isOpen={isSidebarOpen} closeSidebar={closeSidebar} />
       <div className="flex-1 flex flex-col">
         <Navbar toggleSidebar={toggleSidebar} />

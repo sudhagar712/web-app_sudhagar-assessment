@@ -102,7 +102,7 @@ const Transaction = () => {
   ];
 
   return (
-    <div className="mt-5 w-[340px] md:w-[380px]">
+    <div className="mt-5 w-[340px] md:w-[380px] shadow ">
       <div className="bg-white rounded-md p-5">
         <div className="flex justify-between">
           <h1 className="text-xl font-bold">Recent Transaction</h1>
@@ -112,7 +112,7 @@ const Transaction = () => {
           Last Update at: June 02, 2024 | 11:25 PM
         </p>
         <div className="w-full mt-9">
-          <div className="flex space-x-9 border-b border-gray-200">
+          <div className="flex space-x-9 font-bold text-[15px] border-b border-gray-200">
             <button
               className={`tab-button ${activeTab === "tab1" ? "active" : ""}`}
               onClick={() => handleTabClick("tab1")}
@@ -128,6 +128,7 @@ const Transaction = () => {
           </div>
           {/* tab content 1 ---------------map */}
           <div className="tab-content">
+           
             {activeTab === "tab1" && (
               <div className="p-0">
                 {transactions.map((transaction) => (
@@ -135,6 +136,7 @@ const Transaction = () => {
                     key={transaction.id}
                     className="flex items-center mt-3 justify-between bg-white shadow-md rounded-lg p-4 max-w-md mx-auto"
                   >
+                    
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-[#F2F8DF] rounded-full flex items-center justify-center">
                         <span className="text-gray-500 text-xl">👤</span>

@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
     <div
       className={`${
         isOpen ? "block" : "hidden"
-      } md:block absolute md:static bg-gray-200 h-[1200px] md:h-[1000px]  w-[280px] md:w-1/4 lg:w-1/5 px-6 py-[10%] font-inter shadow-2xl`}
+      } md:block absolute md:static bg-white h-[1200px] md:h-[1000px]  w-[280px] md:w-1/4 lg:w-1/5 px-6 py-[10%] font-inter shadow-2xl`}
     >
       <button
         onClick={closeSidebar}
